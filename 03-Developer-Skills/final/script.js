@@ -81,7 +81,7 @@ const measureKelvin = function () {
   };
 
   // B) FIND
-  console.table(measurement);
+  console.table(measurement); //logs out table 
 
   // console.log(measurement.value);
   // console.warn(measurement.value);
@@ -159,3 +159,4 @@ const printForecast = function (arr) {
 printForecast(data1);
 */
 
+console.log('123');

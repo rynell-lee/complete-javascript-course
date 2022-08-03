@@ -2,7 +2,7 @@
 
 /*
 ///////////////////////////////////////
-// Activating Strict Mode
+// Activating Strict Mode, this is done to prevent use of misdeclared variables
 let hasDriversLicense = false;
 const passTest = true;
 
@@ -74,7 +74,7 @@ console.log(yearsUntilRetirement(1991, 'Jonas')); console.log(yearsUntilRetireme
 
 
 ///////////////////////////////////////
-// Functions Calling Other Functions
+// Functions Calling Other Functions, aim to have concise functions
 function cutFruitPieces(fruit) {
   return fruit * 4;
 }
@@ -173,7 +173,7 @@ const friend3 = 'Peter';
 const friends = ['Michael', 'Steven', 'Peter'];
 console.log(friends);
 
-const y = new Array(1991, 1984, 2008, 2020);
+const y = new Array(1991, 1984, 2008, 2020); //the array function
 
 console.log(friends[0]);
 console.log(friends[2]);
@@ -181,7 +181,7 @@ console.log(friends[2]);
 console.log(friends.length);
 console.log(friends[friends.length - 1]);
 
-friends[2] = 'Jay';
+friends[2] = 'Jay'; //reassignment of value in array
 console.log(friends);
 // friends = ['Bob', 'Alice']
 
@@ -214,20 +214,20 @@ const newLength = friends.push('Jay');
 console.log(friends);
 console.log(newLength);
 
-friends.unshift('John');
+friends.unshift('John'); //adds to start of array
 console.log(friends);
 
 // Remove elements
-friends.pop(); // Last
+friends.pop(); // removes last element and returns it
 const popped = friends.pop();
 console.log(popped);
 console.log(friends);
 
-friends.shift(); // First
+friends.shift(); // removes First
 console.log(friends);
 
 console.log(friends.indexOf('Steven'));
-console.log(friends.indexOf('Bob'));
+console.log(friends.indexOf('Bob')); //-1 is returned if value is not there
 
 friends.push(23);
 console.log(friends.includes('Steven'));
@@ -271,7 +271,7 @@ console.log(bills, tips, totals);
 
 
 ///////////////////////////////////////
-// Introduction to Objects
+// Introduction to Objects, used for more unstructured data
 const jonasArray = [
   'Jonas',
   'Schmedtmann',
@@ -300,7 +300,7 @@ const jonas = {
 };
 console.log(jonas);
 
-console.log(jonas.lastName);
+console.log(jonas.lastName); //dot dont need quotes
 console.log(jonas['lastName']);
 
 const nameKey = 'Name';
@@ -317,6 +317,7 @@ if (jonas[interestedIn]) {
   console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
 }
 
+//adding key values to objects
 jonas.location = 'Portugal';
 jonas['twitter'] = '@jonasschmedtman';
 console.log(jonas);
@@ -329,6 +330,8 @@ console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his bes
 ///////////////////////////////////////
 // Object Methods
 
+
+//function in an object is called a method
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
@@ -343,13 +346,15 @@ const jonas = {
 
   // calcAge: function () {
   //   // console.log(this);
-  //   return 2037 - this.birthYeah;
+  //   return 2037 - this.birthYeah;//"this" refers to the object that the method is stored in
   // }
 
   calcAge: function () {
-    this.age = 2037 - this.birthYeah;
+    this.age = 2037 - this.birthYeah; //assigning a new variable immediately
     return this.age;
   },
+
+
 
   getSummary: function () {
     return `${this.firstName} is a ${this.calcAge()}-year old ${jonas.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
@@ -403,14 +408,14 @@ const john = {
   }
 };
 
-mark.calcBMI();
+mark.calcBMI(); //invookign the function
 john.calcBMI();
 
 console.log(mark.bmi, john.bmi);
 
 // "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
 
-if (mark.bmi > john.bmi) {
+if (mark.bmi > john.bmi) { //.bmi now exists
   console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`)
 } else if (john.bmi > mark.bmi) {
   console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`)
@@ -477,7 +482,7 @@ console.log(ages);
 // continue and break
 console.log('--- ONLY STRINGS ---')
 for (let i = 0; i < jonas.length; i++) {
-  if (typeof jonas[i] !== 'string') continue;
+  if (typeof jonas[i] !== 'string') continue; //continue skips the current iteration depeding on the condition
 
   console.log(jonas[i], typeof jonas[i]);
 }
@@ -508,6 +513,7 @@ for (let i = jonas.length - 1; i >= 0; i--) {
   console.log(i, jonas[i]);
 }
 
+//loop within a loop ez stuff
 for (let exercise = 1; exercise < 4; exercise++) {
   console.log(`-------- Starting exercise ${exercise}`);
 
@@ -531,9 +537,9 @@ while (rep <= 10) {
 
 let dice = Math.trunc(Math.random() * 6) + 1;
 
-while (dice !== 6) {
+while (dice !== 6) { //dont need a counter, more like needs a condition to exit the loop
   console.log(`You rolled a ${dice}`);
-  dice = Math.trunc(Math.random() * 6) + 1;
+  dice = Math.trunc(Math.random() * 6) + 1; //trunc removes the decimals
   if (dice === 6) console.log('Loop is about to end...');
 }
 */

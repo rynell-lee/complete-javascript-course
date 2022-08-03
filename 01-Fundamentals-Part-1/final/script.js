@@ -1,4 +1,4 @@
-/*
+/*  (/* comments out the whole chunk)
 ////////////////////////////////////
 // Linking a JavaScript File
 let js = "amazing";
@@ -47,10 +47,10 @@ let year;
 console.log(year);
 console.log(typeof year);
 
-year = 1991;
+year = 1991; //dynamically changing datatype
 console.log(typeof year);
 
-console.log(typeof null);
+console.log(typeof null); //considered a bug in js because it outputs object)
 
 ////////////////////////////////////
 // let, const and var
@@ -59,12 +59,12 @@ age = 31;
 
 const birthYear = 1991;
 // birthYear = 1990;
-// const job;
+// const job; //cannot declare an empty const variable
 
-var job = 'programmer';
+var job = 'programmer'; (prior to es6)
 job = 'teacher'
 
-lastName = 'Schmedtmann';
+lastName = 'Schmedtmann'; (dont ever do this, it creates a property)
 console.log(lastName);
 
 ////////////////////////////////////
@@ -76,7 +76,7 @@ const ageSarah = now - 2018;
 console.log(ageJonas, ageSarah);
 
 console.log(ageJonas * 2, ageJonas / 10, 2 ** 3);
-// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+// 2 ** 3  means 2 to the power of 3 = 2 * 2 * 2
 
 const firstName = 'Jonas';
 const lastName = 'Schmedtmann';
@@ -95,7 +95,7 @@ console.log(x);
 console.log(ageJonas > ageSarah); // >, <, >=, <=
 console.log(ageSarah >= 18);
 
-const isFullAge = ageSarah >= 18;
+const isFullAge = ageSarah >= 18; //its a boolean
 
 console.log(now - 1991 > now - 2018);
 
@@ -149,7 +149,7 @@ const markHigherBMI = BMIMark > BMIJohn;
 console.log(BMIMark, BMIJohn, markHigherBMI);
 
 ////////////////////////////////////
-// Strings and Template Literals
+// Strings and Template Literals ( ` ${} `)
 const firstName = 'Jonas';
 const job = 'teacher';
 const birthYear = 1991;
@@ -167,6 +167,8 @@ console.log('String with \n\
 multiple \n\
 lines');
 
+
+//this works too
 console.log(`String
 multiple
 lines`);
@@ -234,27 +236,27 @@ if (BMIMark > BMIJohn) {
 
 // type conversion
 const inputYear = '1991';
-console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear), inputYear); //coverts the str into a number
 console.log(Number(inputYear) + 18);
 
 console.log(Number('Jonas'));
-console.log(typeof NaN);
+console.log(typeof NaN); //stands for not a number
 
-console.log(String(23), 23);
+console.log(String(23), 23); //converts numbers to string (white is a string)
 
-// type coercion
-console.log('I am ' + 23 + ' years old');
-console.log('23' - '10' - 3);
-console.log('23' / '2');
+// type coercion (js automatically converts the type of value)
+console.log('I am ' + 23 + ' years old'); // returns a string
+console.log('23' - '10' - 3); //returns number 3
+console.log('23' / '2'); //number
 
-let n = '1' + 1; // '11'
+let n = '1' + 1; // '11' (+ sign makes it a stirng)
 n = n - 1;
 console.log(n);
 
 ////////////////////////////////////
 // Truthy and Falsy Values
 
-// 5 falsy values: 0, '', undefined, null, NaN
+// 5 falsy values: 0, '', undefined, null, NaN (these values are boolean false)
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean('Jonas'));
@@ -276,7 +278,7 @@ if (height) {
 }
 
 ////////////////////////////////////
-// Equality Operators: == vs. ===
+// Equality Operators: == vs. === (strict does not perform type coercion)
 const age = '18';
 if (age === 18) console.log('You just became an adult :D (strict)');
 
@@ -371,11 +373,11 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
 }
 
 ////////////////////////////////////
-// The switch Statement
+// The switch Statement (switch statements need a break else it will keep running)
 const day = 'friday';
 
-switch (day) {
-  case 'monday': // day === 'monday'
+switch (day) { //"easier to unds but its not commmonly used"
+  case 'monday': // day === 'monday' 
     console.log('Plan course structure');
     console.log('Go to coding meetup');
     break;
@@ -418,6 +420,8 @@ if (day === 'monday') {
 1991
 true && false && !false
 
+
+//statement
 if (23 > 10) {
   const str = '23 is bigger';
 }
@@ -426,14 +430,14 @@ const me = 'Jonas';
 console.log(`I'm ${2037 - 1991} years old ${me}`);
 
 ////////////////////////////////////
-// The Conditional (Ternary) Operator
+// The Conditional (Ternary) Operator, used for simple if else expressions
 const age = 23;
-// age >= 18 ? console.log('I like to drink wine 🍷') : console.log('I like to drink water 💧');
+// age >= 18 ? console.log('I like to drink wine 🍷') : console.log('I like to drink water 💧'); //statement
 
-const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
+const drink = age >= 18 ? 'wine 🍷' : 'water 💧'; //expression
 console.log(drink);
 
-let drink2;
+let drink2; //declare it outside the block
 if (age >= 18) {
   drink2 = 'wine 🍷';
 } else {
@@ -466,3 +470,12 @@ const bill = 430;
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
 */
+
+if (x == 3) console.log(2);
+const x = "hello";
+
+const age = (number) => {
+  console.log(123);
+};
+
+console.log();
